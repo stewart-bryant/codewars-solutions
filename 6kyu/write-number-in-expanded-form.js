@@ -1,0 +1,20 @@
+// Write Number in Expanded Form
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+// NOTE: All numbers will be whole numbers greater than 0.
+
+//My Solution
+
+const expandedForm = num =>num.toString()
+                              .split('')
+                              .map((n, ind) => n * 10**(num.toString().length-ind-1))
+                              .filter(n => n != 0)
+                              .join(' + ');
+
+//wanted to access array methods, so converted number to string then split to separate each character into array elements
+//used map to iterate through each digit and added place value 0's
+//filtered out any 0 values
+//joined back into a string with ' + ' separator
